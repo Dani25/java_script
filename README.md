@@ -9,4 +9,5 @@ Program rezolvat ecuatie de gradul 2
 
 ## Programe SmartWatch
 
-Daniela Onita
+contact: Daniela Onita
+danielaonita25@gmail.com
