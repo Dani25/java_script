@@ -59,6 +59,7 @@ function on_touch_end(evt)
 		{
 			if(touches[i].identifier == touch_id[j].id){
 				touch_id.splice(j,1);
+				i--;
 				break;
 			}
 		}
