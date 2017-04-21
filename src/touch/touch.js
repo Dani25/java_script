@@ -11,7 +11,7 @@ function on_touch_start(evt)
 	
 	for (var i = 0; i< touches.length; i++)
 	{
-		touch_id.push({id:touches[i].identifier, color:touch_colors[i], lastX: touched[i].pageX, lastY: touches[i].pageY});
+		touch_id.push({id:touches[i].identifier, color:touch_colors[i], lastX: touches[i].pageX, lastY: touches[i].pageY});
 		context.beginPath();
 		context.strokeStyle = touch_id[i].color;
 		context.arc(touches[i].pageX, touches[i].pageY, 25, 0, 2* Math.PI);
@@ -27,14 +27,23 @@ function on_touch_move(evt)
 	for (var i = 0; i< touches.length; i++)
 	{
 		var color="FFFFFF"
+		var lastX = 0;
+		var lastY = 0;
+		var j = -1;
 		for (var j = 0; j<touch_id.length; j++)
 		{
 			if(touches[i].identifier == touch_id[j].id){
 				color=touch_id[j].color;
+				lastX = touch_id[j].lastX;
+				lastY = touch_id[j].lastY;
 				break;
 			}
 		}
 		context.beginPath();
+		context.moveTo(lastX, lastY);
+		context.lineTo(touches[i].pageX, touches[i].pageY);
+		touch_id[j].lastX = touches[i].pageX;
+		touch_id[j].lastY = touches[i].pageY;
 		context.strokeStyle = color;
 		context.arc(touches[i].pageX, touches[i].pageY, 25, 0, 2* Math.PI);
 		context.stroke();
