@@ -41,11 +41,12 @@ function on_touch_move(evt)
 		}
 		context.beginPath();
 		context.moveTo(lastX, lastY);
+		context.lineWidth=40;
 		context.lineTo(touches[i].pageX, touches[i].pageY);
 		touch_id[j].lastX = touches[i].pageX;
 		touch_id[j].lastY = touches[i].pageY;
 		context.strokeStyle = color;
-		context.arc(touches[i].pageX, touches[i].pageY, 25, 0, 2* Math.PI);
+		context.arc(touches[i].pageX, touches[i].pageY, 20, 0, 2* Math.PI);
 		context.stroke();
 	}
 }
