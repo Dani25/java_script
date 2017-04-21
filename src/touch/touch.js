@@ -1,5 +1,6 @@
 window.addEventListener("touchstart", on_touch_start);
 window.addEventListener("touchmove", on_touch_move);
+window.addEventListener("touchend", on_touch_end);
 var touch_colors = ["#FF0000", "#00FF00", "#0000FF", "#0F0F00", "#F0F0F0"];
 var touch_id = [];
 
@@ -49,4 +50,17 @@ function on_touch_move(evt)
 		context.arc(touches[i].pageX, touches[i].pageY, 20, 0, 2* Math.PI);
 		context.stroke();
 	}
+}
+function on_touch_end(evt)
+{
+	for (var i = 0; i< touches.length; i++)
+	{
+		for (var j = 0; j<touch_id.length; j++)
+		{
+			if(touches[i].identifier == touch_id[j].id){
+				touch_id.splice(j,1);
+				break;
+			}
+		}
+	}	
 }
