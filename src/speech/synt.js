@@ -9,3 +9,11 @@ function on_get_voices()
 		p.innerHTML += voices[i].name + ":" + voices[i].lang + "<br>";
 	}
 }
+//-----------------------------------------------------------------------------------
+function speak()
+{
+	var ut = new SpeechSynthesisUtterance();
+	ut.text = document.getElementById("text").value;
+	synt.speak(ut);
+}
+//-----------------------------------------------------------------------------------
