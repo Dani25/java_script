@@ -15,6 +15,7 @@ function onend()
 }
 recognition.onend = onend();
 recognition.onsoundend = onend();
+recognition.onspeechend = onend();
 recognition.onresult = function (e)
 {
 	document.getElementById("text").innerHTML = e.results[0][0].transcript;
