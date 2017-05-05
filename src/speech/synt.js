@@ -14,6 +14,7 @@ function speak()
 {
 	var ut = new SpeechSynthesisUtterance();
 	ut.text = document.getElementById("text").value;
+	ut.rate =10;
 	synt.speak(ut);
 }
 //-----------------------------------------------------------------------------------

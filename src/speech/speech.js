@@ -1,0 +1,21 @@
+document.addEventListener("touchstart",on_touch);
+document.addEventListener("mousedown",mouse_down);
+
+var recognition = new webkitSpeechRecognition();
+recognition.lang = "en-US";
+
+function on_touch()
+{
+	recognition.start();
+	
+}
+function onend()
+{
+	recognition.stop();
+}
+recognition.onend = onend();
+recognition.onsoundend = onend();
+recognition.onresult = function (e)
+{
+	document.getElementById("text").innerHTML = e.results[0][0].transcript;
+}
