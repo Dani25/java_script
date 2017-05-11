@@ -3,20 +3,29 @@ document.addEventListener("mousedown",on_touch);
 
 var recognition = new webkitSpeechRecognition();
 recognition.lang = 'en-US';
+recognition.maxAlternatives =5;
 
 function on_touch()
 {
-	recognition.start();
+	if(recognition.start){
+		recognition.start();
+		recognition_started = true;
+	}
 	
 }
 function onend()
 {
 	recognition.stop();
+	recognition_started = false;
 }
-recognition.onend = onend();
-recognition.onsoundend = onend();
-recognition.onspeechend = onend();
-recognition.onresult = function (e)
+recognition.onend = onend;
+recognition.onsoundend = onend;
+recognition.onspeechend = onend;
+recognition.onresult =on_results;
+
+function on_results(e)
 {
-	document.getElementById("text").innerHTML = e.results[0][0].transcript + e.results[0][0].confidence ;
+	var alternatives = e.results[0];
+	for (var i=0; i<alternatives.length; i++)
+	document.getElementById("text").innerHTML += alternatives[i].transcript + alternatives[i].confidence + "<br>" ;
 }
