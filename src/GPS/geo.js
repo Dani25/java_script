@@ -1,6 +1,11 @@
 get_geo_position();
 function on_success(position){
-	document.getElementById("text").innerHTML = "latitude= "+position.coords.latitude + " longitude= " + position.coords.longitude+" acc= "+position.coords.accuracy+" speed="+position.coords.speed+ "altitude="+position.coords.altitude;
+	document.getElementById("latitude").innerHTML = position.coords.latitude;
+	document.getElementById("longitude").innerHTML = position.coords.longitude
+	document.getElementById("acc").innerHTML = position.coords.accurac
+	//document.getElementById("text").innerHTML = "latitude= "+position.coords.latitude + " longitude= " + position.coords.longitude+" acc= "+position.coords.accuracy+" speed="+position.coords.speed+ "altitude="+position.coords.altitude;
+	document.getElementById("altitude").innerHTML = position.coords.altitude;
+	
 	//var map_str = "http://maps.googleapis.com/maps/api/staticmap?"+"center="+position.coords.latitude+", "+ position.coords.longitute+"&zoom=17&size=400x300&key=AIzaSyArIA_t1lsVeGMDTwmjBKX-UbvwRaGq0T0";
 	var map_str = "http://maps.google.com/maps/api/staticmap?sensor=true" + position.coords.latitude + "," +
                     position.coords.longitude + "&zoom=14&size=300x400&markers=color:blue|label:S|" +
