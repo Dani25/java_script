@@ -15,7 +15,7 @@ function on_touch_start(evt)
 		touch_id.push({id:touches[i].identifier, color:touch_colors[i], lastX: touches[i].pageX, lastY: touches[i].pageY});
 		context.beginPath();
 		context.strokeStyle = touch_id[i].color;
-		context.arc(touches[i].pageX, touches[i].pageY, 25, 0, 2* Math.PI);
+		context.arc(touches[i].pageX, touches[i].pageY, 10, 0, 2* Math.PI);
 		context.stroke();
 	}
 }
