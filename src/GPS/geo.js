@@ -1,9 +1,9 @@
 get_geo_position();
 function on_success(position){
-	document.getElementById("latitude").innerHTML = position.coords.latitude;
-	document.getElementById("longitude").innerHTML = position.coords.longitude;
-	document.getElementById("acc").innerHTML = position.coords.accuracy;
-	document.getElementById("altitude").innerHTML = position.coords.altitude;
+	document.getElementById("latitude").innerHTML = "latitude= "+position.coords.latitude;
+	document.getElementById("longitude").innerHTML = " longitude= " + position.coords.longitude;
+	document.getElementById("acc").innerHTML = "acc="+position.coords.accuracy;
+	document.getElementById("altitude").innerHTML = "altitude = "+position.coords.altitude;
 	document.getElementById("text").innerHTML = "latitude= "+position.coords.latitude + " longitude= " + position.coords.longitude+" acc= "+position.coords.accuracy+" speed="+position.coords.speed+ "altitude="+position.coords.altitude;
 	
 	
