@@ -27,5 +27,5 @@ function on_results(e)
 {
 	var alternatives = e.results[0];
 	for (var i=0; i<alternatives.length; i++)
-	document.getElementById("text").innerHTML += alternatives[i].transcript + alternatives[i].confidence + "<br>" ;
+	document.getElementById("text").innerHTML += alternatives[i].transcript + " "+alternatives[i].confidence + "<br>" ;
 }
