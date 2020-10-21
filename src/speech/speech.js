@@ -8,6 +8,7 @@ recognition.maxAlternatives =5;
 function on_touch()
 {
 	if(recognition.start){
+		console.log("We are listening. Try speaking into the microphone.");
 		recognition.start();
 		recognition_started = true;
 	}
@@ -25,7 +26,7 @@ recognition.onresult =on_results;
 
 function on_results(e)
 {
-	var alternatives = e.results[0];
+	var alternatives = e.results[2];
 	for (var i=0; i<alternatives.length; i++)
 	document.getElementById("text").innerHTML += "Ati rostit cuvantul: "+ alternatives[i].transcript + ", acuratete: "+alternatives[i].confidence + "<br>" ;
 }
