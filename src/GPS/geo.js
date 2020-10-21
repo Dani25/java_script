@@ -9,7 +9,7 @@ function on_success(position){
 	//document.getElementById("map").setAttribute("src",map_str);
 	var latlon = position.coords.latitude + "," + position.coords.longitude;
 
-  	var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=YOUR_KEY";
+  	var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&sensor=false&key=AIzaSyA-8hlvciV9gfdBvgLtaRytf8mb4vuLrtU";
 
   	document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 	}
