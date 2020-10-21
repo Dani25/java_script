@@ -27,5 +27,6 @@ function on_results(e)
 {
 	var alternatives = e.results[2];
 	for (var i=0; i<alternatives.length; i++)
-	document.getElementById("text").innerHTML += "Ati rostit cuvantul: "+ alternatives[i].transcript + ", acuratete: "+alternatives[i].confidence + "<br>" ;
+		document.getElementById("text").innerHTML += alternatives[i].transcript 
+	//document.getElementById("text").innerHTML += "Ati rostit cuvantul: "+ alternatives[i].transcript + ", acuratete: "+alternatives[i].confidence + "<br>" ;
 }
