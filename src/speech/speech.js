@@ -7,8 +7,8 @@ recognition.maxAlternatives =5;
 
 function on_touch()
 {
-	if(recognition.start){
-		console.log("We are listening. Try speaking into the microphone.");
+	console.log("We are listening. Try speaking into the microphone.");
+	if(recognition.start){		
 		recognition.start();
 		recognition_started = true;
 	}
