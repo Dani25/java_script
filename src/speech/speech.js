@@ -3,7 +3,7 @@ document.addEventListener("mousedown",on_touch);
 
 var recognition = new webkitSpeechRecognition();
 recognition.lang = 'en-US';
-recognition.maxAlternatives =5;
+//recognition.maxAlternatives =5;
 
 function on_touch()
 {
