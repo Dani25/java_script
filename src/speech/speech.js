@@ -28,5 +28,5 @@ function on_results(e)
 	//var alternatives = e.results[0];
 	//for (var i=0; i<alternatives.length; i++)
 		//document.getElementById("text").innerHTML += "Ati rostit cuvantul: "+ alternatives[i].transcript + ", acuratete: "+alternatives[i].confidence + "<br>" ;
-	document.getElementById("text").innerHTML = "Ati rostit cuvantul: "+ e.results[0][0].transcript + ", acuratete: "+e.results[0][0].confidence + "<br>" 
+	document.getElementById("text").innerHTML += "Ati rostit cuvantul: "+ e.results[0][0].transcript + ", acuratete: "+e.results[0][0].confidence + "<br>" 
 }
