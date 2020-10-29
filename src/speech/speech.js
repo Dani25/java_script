@@ -2,7 +2,7 @@ document.addEventListener("touchstart",on_touch);
 document.addEventListener("mousedown",on_touch);
 
 var recognition = new webkitSpeechRecognition();
-recognition.lang = 'en-US';
+recognition.lang = 'ro-RO';
 //recognition.maxAlternatives =5;
 
 function on_touch()
